@@ -1,0 +1,24 @@
+- name: install pip
+  command: sh -c "curl -kL https://bootstrap.pypa.io/get-pip.py | python"
+
+- name: install flask
+  command: pip install flask
+
+- name: install peewee
+  command: pip install peewee
+
+- name: Copy quote test data
+  copy: src=RestTest001/quote.tsv dest=quote.tsv mode=644
+
+- name: Copy quote import.py
+  copy: src=RestTest001/import.py dest=import.py mode=644
+
+- name: Copy quote api.py
+  copy: src=RestTest001/api.py dest=api.py mode=644
+
+- name: initialize
+  command: python import.py
+
+- name: start rest
+  command: python api.py
+
