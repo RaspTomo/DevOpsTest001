@@ -20,5 +20,8 @@
   command: python import.py
 
 - name: start rest
-  command: python api.py
-
+  shell: python api.py &
+  register: result_check
+  async: 1
+  poll: 0
+  
