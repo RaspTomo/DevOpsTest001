@@ -8,7 +8,7 @@
   command: pip install peewee
 
 - name: Copy quote test data
-  copy: src=RestTest001/quote.tsv dest=quote.tsv mode=644
+  copy: src=RestTest001/quote.csv dest=quote.csv mode=644
 
 - name: Copy quote import.py
   copy: src=RestTest001/import.py dest=import.py mode=644
