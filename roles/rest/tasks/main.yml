@@ -8,13 +8,13 @@
   command: pip install peewee
 
 - name: Copy quote test data
-  copy: src=RestTest001/quote.csv dest=quote.csv mode=644
+  copy: src=RestTest001/quote.csv dest=/home/vagrant/quote.csv mode=644
 
 - name: Copy quote import.py
-  copy: src=RestTest001/import.py dest=import.py mode=644
+  copy: src=RestTest001/import.py dest=/home/vagrant/import.py mode=644
 
 - name: Copy quote api.py
-  copy: src=RestTest001/api.py dest=api.py mode=644
+  copy: src=RestTest001/api.py dest=/home/vagrant/api.py mode=644
 
 - name: initialize
   command: python import.py
